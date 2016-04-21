@@ -1,0 +1,33 @@
+body{
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+.encabezado{
+  color: white;
+  width: 100%;
+  background-color: black;
+  box-shadow: 0px 0px 15px gray;
+  position: fixed;
+}
+
+.encabezado li{
+ display: inline;
+ padding: 6.5px;
+ position: absolute;
+
+}
+
+.encabezado li a:hover{
+  background-color: white;
+  color: black;
+}
+
+.encabezado ul{
+  height: 30px;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  left: 5px;
+
+}

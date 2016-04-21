@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/estilo.css" media="screen" title="no title" charset="utf-8">
+    <title>Ruleta</title>
+  </head>
+  <body>
+    <div class="encabezado casino" >
+      <span id="credito" >credito: $100</span>
+    </div>
+    <div class="botones casino">
+      <h1>apuestas</h1>
+      <!-- caso1: el jugador aposto al 0, caso2: entre 1 y 5 y caso3: ente 6 y 9 -->
+      <input type="button" onclick="elejirNum(1)" name="0" value="-0-">
+      <input type="button" onclick="elejirNum(2)" name="1-5" value="1-5">
+      <input type="button" onclick="elejirNum(3)" name="6-9" value="6-9">
+    </div>
+    <div class="Tablero casino">
+      <table>
+        <tr>
+          <td> </td>
+          <td id=0>-0-</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td id=1>-1-</td>
+          <td id=2> 2 </td>
+          <td id=3>-3-</td>
+        </tr>
+        <tr>
+          <td id=4> 4 </td>
+          <td id=5> 5 </td>
+          <td id=6> 6 </td>
+        </tr>
+        <tr>
+          <td id=7>7</td>
+          <td id=8>8</td>
+          <td id=9>9</td>
+        </tr>
+      </table>
+    </div>
+    <div class="tablero casino">
+      <input type="button" name="tirar" onclick="tirarRuleta()" value="TIRAR">
+    </div>
+    <script src="js/rulete.js" charset="utf-8"></script>
+  </body>
+</html>
