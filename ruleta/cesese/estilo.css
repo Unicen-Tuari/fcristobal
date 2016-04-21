@@ -1,7 +1,7 @@
 
 body{
   margin: 0px;
-  font-family: monospace;
+  font-family: comic, sans-serif;
   background-color: #076324;
 }
 
@@ -39,7 +39,6 @@ input{
   background-color: #084253;
   border: 0px;
   font-size: 30px;
-  white-space: pre;
 }
 
 input:hover{
@@ -68,7 +67,6 @@ tr{
 }
 
 td{
-  white-space: pre;
   text-align: center;
   border: 5px solid black;
 }
