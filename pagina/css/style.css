@@ -1,35 +1,53 @@
 body{
   margin: 0px;
-  background-image: url("imagenes\wallpaper.jpg");
-  font-family: sans-serif;
-}
-
-a{
-  text-decoration: none;
-  font-size: 20px;
+  background-color: #F3AC2B;
+  font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .encabezado{
-  color: white;
-  width: 100%;
-  padding: 0px;
-  background-color: black;
+  top: 20px;
+  height: 47px;
+  overflow: hidden;
+  background-color: #222222;
   box-shadow: 0px 0px 15px gray;
   position: fixed;
 }
 
 .encabezado ul{
- margin: 0px;
+  margin: 0px;
+  list-style-type: none;
 }
 
 .encabezado li{
-  padding: 20px;
-  display: inline-block;;
-
+  display: inline-block;
 }
 
 .encabezado li:hover{
   margin: 0px;
-  background-color: white;
+  background-color: #555555;
   color: black;
+}
+
+.encabezado li a{
+  display: block;
+  color: #F37E2B;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 15px;
+}
+
+.logo {
+  align-content: center;
+  position: absolute;
+  right: 10px;
+}
+
+.logo img{
+  align-self: center;
+  height: 50px;
+  display: block;
+}
+
+.logo span{
+  font-style: italic;
 }

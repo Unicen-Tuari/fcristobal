@@ -1,7 +1,7 @@
 
 body{
   margin: 0px;
-  font-family: monospace;
+  font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
   background-color: #076324;
 }
 
@@ -47,11 +47,6 @@ input:hover{
   background-color: white;
 }
 
-input:visited {
-  background-color: black;
-  color: white;
-}
-
 .Tablero{
   position: relative;;
   top: 10px;
@@ -73,11 +68,8 @@ td{
   border: 5px solid black;
 }
 
-
-#numeroRuleta {
-  float: right;
-}
-
-#saldo {
-  float: left;
+#estadoApuesta {
+  display: block;
+  font-size: 20px;
+  font-style: italic;
 }

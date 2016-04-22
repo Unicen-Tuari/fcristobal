@@ -30,16 +30,17 @@ function elejirNum(caso) {
   if (caso == 1) {
     cambiarfondo(0, "green");
   }
-  if (caso == 2) {
+  else if (caso == 2) {
     for (var i = 1; i < 6; i++) {
       cambiarfondo(i, "green");
     }
   }
-  if (caso == 3) {
+  else if (caso == 3) {
     for (var i = 6; i < 10; i++) {
       cambiarfondo(i, "green");
     }
   }
+  document.getElementById("estadoApuesta").innerHTML = "¡Listo para tirar!";
 }
 
 function tirarRuleta()
@@ -73,6 +74,7 @@ function tirarRuleta()
       credito -= 5;
     }
   }
+  document.getElementById("estadoApuesta").innerHTML = ("Numero ganador: "+ ganador + " apueste de nuevo!")
   document.getElementById("credito").innerHTML = ("credito: $"+credito);
   casoElejido = 0;
 }
