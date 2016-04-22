@@ -49,32 +49,40 @@ function tirarRuleta()
   if (credito < 5) {alert("WASTED"); return;}
   ganador = Tirada();
   cambiarfondo(ganador, "red");
+  var ganancia = "";
   if (casoElejido == 1)//caso 1 = aposto al 0
   {
     if (ganador == 0) {
       credito += 10;
+      ganancia = "+10!";
     }
     else {
       credito -= 5;
+      ganancia = "-5";
     }
   }
   else if (casoElejido == 2) {//segundo caso aposto entre el 1 y e 5
     if (ganador > 0 && ganador <6) {
       credito += 5;
+      ganancia = "+5";
     }
     else {
       credito -= 5;
+      ganancia = "-5";
     }
   }
   else {//ultimo caso posible
     if (ganador > 5) {
       credito += 3;
+      ganancia = "+3";
     }
     else {
       credito -= 5;
+      ganancia = "-5";
     }
   }
-  document.getElementById("estadoApuesta").innerHTML = ("Numero ganador: "+ ganador + " apueste de nuevo!")
-  document.getElementById("credito").innerHTML = ("credito: $"+credito);
+
+  document.getElementById("estadoApuesta").innerHTML = ("Numero ganador: "+ ganador + " ¡apueste de nuevo!")
+  document.getElementById("credito").innerHTML = ("credito: $"+credito + "("+ganancia+")");
   casoElejido = 0;
 }
