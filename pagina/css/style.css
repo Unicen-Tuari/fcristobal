@@ -1,34 +1,33 @@
 body{
   margin: 0px;
-  background-color: #F3AC2B;
   font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-image: url("VINILO.png");
 }
 
-.encabezado{
+.barraNav{
+  z-index: 1;
   top: 20px;
-  height: 47px;
   overflow: hidden;
   background-color: #222222;
   box-shadow: 0px 0px 15px gray;
   position: fixed;
 }
 
-.encabezado ul{
+.barraNav ul{
   margin: 0px;
-  list-style-type: none;
 }
 
-.encabezado li{
+.barraNav li{
   display: inline-block;
 }
 
-.encabezado li:hover{
+.barraNav li:hover{
   margin: 0px;
   background-color: #555555;
   color: black;
 }
 
-.encabezado li a{
+.barraNav li a{
   display: block;
   color: #F37E2B;
   text-decoration: none;
@@ -36,18 +35,79 @@ body{
   padding: 15px;
 }
 
-.logo {
-  align-content: center;
+.encabezado {
+  text-align: center;
+  overflow: hidden;
+  height: 100px;
+  border-bottom: 7px dashed #222222;
+}
+
+.encabezado img{
+  position: absolute;
+  height: 100px;
+  right: 0px;
+}
+
+.titulo{
+  display: inline-block;;
+}
+
+.titulo h1{
+  font-family: 'Trocchi', serif;
+  font-size: 45px;
+}
+
+.titulo h3{
+  font-weight: 400;
+  font-style: italic;
+}
+
+.titulo h1, h3{
+  color: #222222;
+  margin: 0px;
+}
+
+.footer, .encabezado{
+    box-shadow: 0px 0px 50px #F37E2B;
+    width: 100%;
+    background-color: #F37E2B;
+}
+
+.footer {
+  height: 50px;
+  border-top: 7px dashed #222222;
+  bottom: 0px;
+}
+
+.footer img{
+  display: block;
+  height: 50px;
   position: absolute;
   right: 10px;
 }
 
-.logo img{
-  align-self: center;
-  height: 50px;
-  display: block;
+.noticias {
+  width: 350px;
+  height: 1325px;
+  display: inline-block;
+  background-color: #F3AC2B;
+  opacity: 0.5;
 }
 
-.logo span{
-  font-style: italic;
+.noticia{
+  margin: 25px;
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  opacity: 0.5;
+}
+
+.central {
+  width: 930px;
+  height: 1325px;
+  position: absolute;
+  background-color: white;
+  opacity: 0.7;
+  display: inline-block;
 }
