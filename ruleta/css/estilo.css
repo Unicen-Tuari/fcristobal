@@ -10,6 +10,7 @@ body{
   width: 100%;
   color: white;
   text-align: center;
+  overflow: hidden;
 }
 
 .encabezado {
@@ -39,7 +40,6 @@ input{
   background-color: #084253;
   border: 0px;
   font-size: 30px;
-  white-space: pre;
 }
 
 input:hover{
@@ -52,8 +52,23 @@ input:hover{
   top: 10px;
 }
 
+.izquierda{
+  position: absolute;
+  width: initial;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.izquierda p{
+  font-size: 20px;
+}
+
+h1{
+  margin-top: 5px;
+}
+
 table{
-  display: inline-block;;
+  display: inline-block;
   font-size: 60px;
   border: 5px solid black;
 }
@@ -64,7 +79,6 @@ tr{
 
 td{
   white-space: pre;
-  text-align: center;
   border: 5px solid black;
 }
 
