@@ -54,6 +54,7 @@ body{
 }
 
 .izquierda{
+  margin: 10px;
   position: absolute;
   width: initial;
   text-align: left;
