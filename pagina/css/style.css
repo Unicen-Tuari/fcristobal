@@ -169,7 +169,7 @@ h1, h3{
   padding: 0px;
 }
 
-.instrumento {
+.instrumento, .fondoB {
   padding: 20px;
   background-color: white;
 }
@@ -190,15 +190,6 @@ h1, h3{
   background-color: #F37E2B;
 }
 
-.central form input{
-  display: block;
-  margin: 20px;
-}
-
-.central form{
-  padding: 20px;
-}
-
 .QS {
   text-align: center;
   width: 100%;
@@ -212,4 +203,36 @@ h1, h3{
 
 .QS p{
   white-space: pre-wrap;
+}
+
+.fondoB img{
+  height: 200px;
+  float: right;
+}
+
+.central table, .central td{
+  border: 7px dashed #F37E2B;
+}
+
+.central td{
+  font-size: 30px;
+  padding: 20px;
+}
+
+.formulario {
+  min-height: 503px;
+}
+
+.formulario input, textarea{
+  display: block;
+  margin: 20px;
+}
+
+.formulario form{
+  padding: 20px;
+  display: inline-block;
+}
+
+.formulario img{
+  height: 450px;
 }
