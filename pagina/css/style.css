@@ -2,18 +2,26 @@ body{
   margin: 0px;
   font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
   background-image: url("VINILO.png");
+  color: #222222;
 }
+
+.categorias, .barraNav, .categorias li input {
+  background-color: #222222;
+}
+
+.categorias input{
+  border: 0px;
+}
+
 
 .barraNav{
   z-index: 1;
   top: 20px;
   overflow: hidden;
-  background-color: #222222;
-  box-shadow: 0px 0px 15px gray;
   position: fixed;
 }
 
-.barraNav ul{
+.barraNav ul, .categorias ul{
   margin: 0px;
 }
 
@@ -21,13 +29,12 @@ body{
   display: inline-block;
 }
 
-.barraNav li:hover{
+.barraNav li:hover, .categorias input:hover{
   margin: 0px;
   background-color: #555555;
-  color: black;
 }
 
-.barraNav li a{
+.barraNav a, .categorias input, .categorias a{
   display: block;
   color: #F37E2B;
   text-decoration: none;
@@ -37,7 +44,6 @@ body{
 
 .encabezado {
   text-align: center;
-  overflow: hidden;
   height: 100px;
   border-bottom: 7px dashed #222222;
 }
@@ -52,7 +58,7 @@ body{
   display: inline-block;;
 }
 
-.titulo h1{
+h1{
   font-family: 'Trocchi', serif;
   font-size: 45px;
 }
@@ -62,21 +68,23 @@ body{
   font-style: italic;
 }
 
-.titulo h1, h3{
-  color: #222222;
+h1, h3{
   margin: 0px;
 }
 
+.fondonaranja{
+  background-color: #F37E2B;
+}
+
 .footer, .encabezado{
-    box-shadow: 0px 0px 50px #F37E2B;
-    width: 100%;
-    background-color: #F37E2B;
+  box-shadow: 0px 0px 50px #F37E2B;
 }
 
 .footer {
   height: 50px;
   border-top: 7px dashed #222222;
   bottom: 0px;
+  position: relative;
 }
 
 .footer img{
@@ -88,23 +96,120 @@ body{
 
 .noticias {
   width: 20%;
-  height: 100%;
-  display: inline-block;
-  background-color: #F37E2B;
+  border: 7px dashed white;
+}
+
+.noticias a {
+  text-decoration: none;
+  color: #222222;
 }
 
 .noticia{
+  text-align: center;
   margin: 10%;
   overflow: hidden;
-  height: 300px;
   width: 80%;
   background-color: white;
   opacity: 0.5;
 }
 
-.central {
-  height: 100%;
+.noticia:hover{
+  opacity: 1;
+}
+
+.ofertas{
+  width: 80%;
+  border: 7px dashed #F37E2B;
+}
+
+.oferta{
+  border-bottom: 7px dashed #222222;
+  border-top: 7px dashed #222222;
+  margin-top: 10px;
+}
+
+.oferta img, .noticia img{
+  width: 300px;
+}
+
+.oferta span{
+  display: block;
+  padding: 20px;
+  white-space: pre-wrap;
+}
+
+.central{
+  min-height: 503px;
+  display: flex;
+}
+
+.ofertas h1{
   background-color: white;
-  opacity: 0.7;
-  display: inline-block;
+}
+
+.categorias{
+  margin: 0px;
+}
+
+.categorias li{
+  list-style-type: none;
+  margin: 0px;
+}
+
+.categorias input{
+  width: 300px;
+  list-style-type: none;
+}
+
+.tablainst, .instrumento {
+  display: none;
+}
+
+.categorias ul{
+  padding: 0px;
+}
+
+.instrumento {
+  padding: 20px;
+  background-color: white;
+}
+
+.instrumento li{
+  margin: 10px;
+  list-style-type: none;
+}
+
+.instrumento a{
+  padding: 20px;
+  text-decoration: none;
+  color: #222222;
+  display: block;
+}
+
+.instrumento a:hover{
+  background-color: #F37E2B;
+}
+
+.central form input{
+  display: block;
+  margin: 20px;
+}
+
+.central form{
+  padding: 20px;
+}
+
+.QS {
+  text-align: center;
+  width: 100%;
+  background-color: white;
+}
+
+.QS img{
+  width: 700px;
+  float: left;
+}
+
+.QS p{
+  white-space: pre-wrap;
 }
