@@ -5,6 +5,8 @@ body{
   color: #222222;
 }
 
+/*------------------------------css general-----------------------------*/
+
 .categorias, .barraNav, .categorias li input {
   background-color: #222222;
 }
@@ -94,6 +96,13 @@ h1, h3{
   right: 10px;
 }
 
+.central{
+  min-height: 503px;
+  display: flex;
+}
+
+/*-----------------------------------HOME-----------------------------------*/
+
 .noticias {
   width: 20%;
   border: 7px dashed white;
@@ -138,14 +147,11 @@ h1, h3{
   white-space: pre-wrap;
 }
 
-.central{
-  min-height: 503px;
-  display: flex;
-}
-
 .ofertas h1{
   background-color: white;
 }
+
+/*---------------------------------INSTRUMENTOS-----------------------------*/
 
 .categorias{
   margin: 0px;
@@ -190,6 +196,8 @@ h1, h3{
   background-color: #F37E2B;
 }
 
+/*-------------------------------QUIENES SOMOS---------------------------*/
+
 .QS {
   text-align: center;
   width: 100%;
@@ -210,6 +218,8 @@ h1, h3{
   float: right;
 }
 
+/*-------------------------------------guitarra-----------------------------*/
+
 .central table, .central td{
   border: 7px dashed #F37E2B;
 }
@@ -218,6 +228,8 @@ h1, h3{
   font-size: 30px;
   padding: 20px;
 }
+
+/*----------------------------------contacto--------------------------------*/
 
 .formulario {
   min-height: 503px;
