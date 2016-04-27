@@ -1,15 +1,8 @@
 "use strict";
 
-var casoElejido = 0;//ninguno de los 3 casos posibles
-var ganador = "0";
+var numElejido = -1;
+var ganador;
 var credito = 100;
-
-function limpiarTablero(){
-  cambiarfondo(ganador, "");//saca el fondo rojo al ganador anterior
-  for (var i = 0; i < 10; i++) {
-    cambiarfondo(i, "");
-  }
-}
 
 function Tirada()
 //devuelve un numero del 0 al 9
@@ -17,40 +10,50 @@ function Tirada()
   return Math.floor((Math.random() * 10) );
 }
 
-function cambiarfondo(numero, color)
-//cambia el color de fondo de un casillero dado el numero que lo identifica y un color
-{
-  var casillero = document.getElementById(numero);
-  casillero.style.backgroundColor = color;
+function cambiarColor(numero, color){//cambia el color de un casillero dado
+  document.getElementsByName("num")[numero].style.backgroundColor = color;
 }
 
-function elejirNum(caso) {
+function limpiarTablero() {//devuelve el tablero al color original
+  for (var i = 0; i < 10; i++) {
+    cambiarColor(i, "#076324");
+  }
+}
+
+function elejirNum(numero) {//se activa cuando se presiona un boton
   limpiarTablero();
-  casoElejido = caso;
-  if (caso == 1) {
-    cambiarfondo(0, "green");
-  }
-  else if (caso == 2) {
-    for (var i = 1; i < 6; i++) {
-      cambiarfondo(i, "green");
-    }
-  }
-  else if (caso == 3) {
-    for (var i = 6; i < 10; i++) {
-      cambiarfondo(i, "green");
-    }
-  }
+  numElejido = numero;
+  cambiarColor(numero, "green");
   document.getElementById("estadoApuesta").innerHTML = "¡Listo para tirar!";
+}
+
+function elejirCaso(numero){
+  if (numero == 0){//caso 1 = aposto al 0
+    var casoElejido = 1;
+  }
+  else if (numero > 0 && numero < 6) {//segundo caso aposto entre el 1 y e 5
+    var casoElejido = 2;
+  }
+  else {
+    var casoElejido = 3;//ultimo caso posible entre 6 y 9
+  }
+  return casoElejido;
 }
 
 function tirarRuleta()
 {
-  if (casoElejido == 0) {alert("ninguna apuesta registrada"); return;}
-  if (credito < 5) {alert("WASTED"); return;}
+  if (numElejido == -1) {alert("ninguna apuesta registrada"); return;}// el -1 significa que no aposto
+  if (credito < 5) {alert("WASTED"); return;}//se quedo sin creditos
+  if (numElejido == ganador) {//cambia el color del ganador anterior, si es igual al numero elejido lo vuelve a resaltar
+    cambiarColor(ganador, "green");
+  }
+  else if(ganador !== undefined){
+    cambiarColor(ganador, "#076324")
+  }
   ganador = Tirada();
-  cambiarfondo(ganador, "red");
-  var ganancia = "";
-  if (casoElejido == 1)//caso 1 = aposto al 0
+  var ganancia;
+  var casoElejido = elejirCaso(numElejido);
+  if (casoElejido == 1)
   {
     if (ganador == 0) {
       credito += 10;
@@ -61,8 +64,8 @@ function tirarRuleta()
       ganancia = "-5";
     }
   }
-  else if (casoElejido == 2) {//segundo caso aposto entre el 1 y e 5
-    if (ganador > 0 && ganador <6) {
+  else if (casoElejido == 2) {
+    if (numElejido == ganador) {
       credito += 5;
       ganancia = "+5";
     }
@@ -71,8 +74,8 @@ function tirarRuleta()
       ganancia = "-5";
     }
   }
-  else {//ultimo caso posible
-    if (ganador > 5) {
+  else {
+    if (ganador == numElejido) {
       credito += 3;
       ganancia = "+3";
     }
@@ -81,8 +84,7 @@ function tirarRuleta()
       ganancia = "-5";
     }
   }
-
+  cambiarColor(ganador, "red");
   document.getElementById("estadoApuesta").innerHTML = ("Numero ganador: "+ ganador + " ¡apueste de nuevo!")
   document.getElementById("credito").innerHTML = ("credito: $"+credito + "("+ganancia+")");
-  casoElejido = 0;
 }
