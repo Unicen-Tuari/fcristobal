@@ -1,103 +1,162 @@
-
-body{
-  margin: 0px;
-  font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+body {
+  color: white;
   background-color: #076324;
 }
 
-.casino{
-  font-size: 40px;
-  width: 100%;
+a{
   color: white;
-  text-align: center;
-  overflow: hidden;
+  text-decoration: none;
 }
 
-.encabezado {
-  display: inline-block;
+a:hover{
+  color: white;
+  text-decoration: none;
+  text-shadow: 0px 0px 10px white;
+}
+
+header {
+  padding: 10px;
+  box-shadow: 0px 0px 10px black;
+}
+
+#jugar, footer, header, #tirar{
   background-color: #084253;
 }
 
-.encabezado span{
+header h1{
   margin: 0px;
-  display: block;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px white;
+  font-size: 40px;
+}
+
+.notificaciones{
+  border: 5px solid white;
   padding: 10px;
 }
 
-.sub{
-  box-shadow: 5px 5px 10px black;
-  background-color: #861A09;
+.credit{
+  font-size: 20px;
 }
 
-.sub h1{
-  border: 5px solid white;
-  margin: 0px;
-  font-size: 40px;
-}
-
-.tirar input{
-  box-shadow: 0px 0px 5px black;
-  background-color: #084253;
-  border: 0px;
-  font-size: 30px;
-}
-
-.tirar input:hover{
-  box-shadow: 0px 0px 20px black;
-  background-color: white;
-}
-
-.Tablero{
-  position: relative;
-  top: 10px;
-  padding-bottom: 30px;
-}
-
-.izquierda{
-  margin: 10px;
-  position: absolute;
-  width: initial;
-  text-align: left;
+form {
   white-space: pre-wrap;
 }
 
-.izquierda p{
+.pop, .tabla, .apuestas{
+  animation: pop 0.5s;
+  -webkit-animation: pop 0.5s;
+}
+
+@-webkit-keyframes example {
+  0% {transform: scale(0);}
+  50%  {transform: scale (1.5);}
+  100%  {transform: scale(0);}
+}
+
+@keyframes pop{
+  0% {transform: scale(0);}
+  50% {transform: scale(1.5);}
+  100% {transform: scale(1);}
+}
+
+footer{
+  bottom: 0;
+  width: 100%;
   font-size: 20px;
+  clear: both;
 }
 
-h1{
-  margin-top: 5px;
+#central{
+  min-height: 35.5em;
 }
 
-#estadoApuesta {
-  display: block;
-  font-size: 20px;
-  font-style: italic;
+#cantidad{
+  font-size: 30px;
+  color: #333;
+  margin: 10px;
 }
 
-.tabla {
-  width: initial;
-  display: inline-block;
-  border: 5px solid black;
+#jugar{
+  font-size: 30px;
+}
+
+#jugar:hover{
+  color: #084253;
+  background-color: white;
+  box-shadow: 0px 0px 10px white;
+}
+
+#cantidad:focus{
+  box-shadow: 0px 0px 10px white;
+}
+
+/*---------------------------------------------------------------------------*/
+.tabla, .apuestas {
+  border: 5px solid white;
   padding: 0px;
+}
+
+.tabla{
   border-radius: 95px 95px 0px 0px;
-}
-
-.fila {
-  position: relative;
-  display: table-row;
-}
-
-.fila input{
-  width: 80px;
-  margin: 1px;
-  color: white;
-  display: table-cell;
   font-size: 60px;
-  background-color: #076324;
-  border: 5px solid black;
 }
 
-.fila input:hover{
+.tabla input, .apuestas input{
+  color: white;
+  display: none;
+  border: 5px solid white;
+}
+
+.adicionales, #cero{
+  background-color: transparent;
+}
+
+#cero{
+  border: none;
+}
+
+#central input:hover{
   text-shadow: 0px 0px 10px white;
 }
+
+#central input:focus{
+  text-shadow: 0px 0px 20px white;
+
+}
+
+.numN{
+  background-color: black;
+}
+
+.numR{
+  background-color: #861A09;
+}
+
+.apuestas{
+  font-size: 40px;
+}
+
+.resaltado{
+  text-shadow: 0px 0px 10px white;
+}
+
+.tablaDeApuestas{
+  font-size: 20px;
+}
+
+.apuestas, .tablaDeApuestas{
+    position: relative;
+    top: 91px;
+}
+
+.tablaDeApuestas span{
+  display: block;
+}
+
+#ganador{
+  font-size: 60px;
+  text-align: center;
+  color: gold;
+}
+/*---------------------------------------------------------------------------*/
