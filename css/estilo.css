@@ -2,42 +2,104 @@ body {
   background-color: white;
 }
 
-header {
-  background-color: #9085FE;
+header, footer {
+  background-color: #FD525B;
   padding: 10px;
+  font-weight: bolder;
+  color: white;
+  font-size: 50px;
+  box-shadow: 0px 0px 10px #FD525B;
 }
 
-header h1{
+#barraNav{
+  margin-top: 5px;
+}
+
+#barraNav input{
+  color: white;
+  background-color: #FD525B;
+}
+
+#barraNav input:hover{
+  background-color: white;
+  color: #FD525B;
+  text-shadow: 0px 0px 10px #FF7052;
+}
+
+.logo{
+  float: left;
+  padding-right: 10px;
+  padding-left: 5px;
+  background-color: #E63C44;
+  border-radius: 0px 30px 30px 0px;
+  border: 5px solid #FB4750;
+}
+
+footer, .separador{
+  clear: both;
+  display: block;
+}
+
+footer{
+  bottom: 0px;
+}
+
+.activado{
+  background-color: white !important;
+  color: #FD525B !important;
+}
+
+.central{
+  min-height: 400px;
+  padding-top: 100px;
+  background-color: white;
+}
+
+table{
+  border: 2px solid gray;
+  box-shadow: 0px 0px 10px gray;
+}
+
+input.Valores{
+  color: gray;
+  border: 1px solid gray;
+  box-shadow: 0px 0px 2px gray;
+}
+
+.ofertas{
+  padding-top: 100px;
+}
+
+.ofertas img{
+  width: 100%;
+}
+
+.ofertas p, .articulo p{
+  text-align: center;
+  color: #FF7052;
+}
+
+.central h1{
+  display: block;
+  position: absolute;
   margin: 0px;
-  color: white;
+  top: 0px;
+  left: 0px;
+  color: red;
+  text-align: center;
 }
 
-form {
+.ofertas header, .central h1{
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
-.tabla {
-  width: initial;
-  display: inline-block;
-  border: 5px solid black;
-  padding: 0px;
-  border-radius: 95px 95px 0px 0px;
+.ofertas header{
+  background-color: red;
 }
 
-.fila {
-  position: relative;
-  display: table-row;
-}
-
-.fila input{
-  width: 80px;
-  margin: 1px;
-  color: white;
-  display: table-cell;
-  font-size: 60px;
-  background-color: #076324;
-  border: 5px solid black;
-}
-
-.fila input:hover{
-  text-shadow: 0px 0px 10px white;
+.articulo img{
+  width: 100%;
 }
