@@ -1,5 +1,14 @@
 "use strict";
 
+var valorApuestas = {
+  valor: 5,
+  paridad: 2,
+  color: 2,
+  mitad: 2,
+  semipleno: 3,
+  pleno: 5
+}
+
 var apuestas = [];
 var doble = false;
 
@@ -13,8 +22,8 @@ function jugador(){
     aumentarCredito: function(monto){
       this.credito = this.credito + monto;
     },
-    disminuirCredito: function(){
-      this.credito--;
+    disminuirCredito: function(monto){
+      this.credito = this.credito - monto;
     }
   }
 }
@@ -129,32 +138,19 @@ function agregarEvento(actual, pos){
     if (player.getCredit() === 0) {
       return alert('credito insuficiente');
     }
-    player.disminuirCredito();
+    player.disminuirCredito(valorApuestas.valor);
     if (pos === ".tabla input" && doble && actual > 0 && actual < 10) {
       var noEncontro = true;
-      tipo = actual;
+      tipo = actual + "-" + (actual+1);
       for (var i = 0; i < apuestas.length; i++) {
-        if (apuestas[i].getType() == tipo) {
+        if (apuestas[i].getType() === tipo) {
           noEncontro = false;
-          apuestas[i].aumentarValor(0.5);
+          apuestas[i].aumentarValor(valorApuestas.valor);
           mostrarApuestas();
         }
       }
       if (noEncontro){
-        apuestas.push(new apuesta(tipo, 0.5));
-        mostrarApuestas();
-      }
-      tipo++;
-      noEncontro = true;
-      for (var i = 0; i < apuestas.length; i++) {
-        if (apuestas[i].getType() == tipo) {
-          noEncontro = false;
-          apuestas[i].aumentarValor(0.5);
-          mostrarApuestas();
-        }
-      }
-      if (noEncontro){
-        apuestas.push(new apuesta(tipo, 0.5));
+        apuestas.push(new apuesta(tipo, valorApuestas.valor));
         mostrarApuestas();
       }
       return;
@@ -167,10 +163,10 @@ function agregarEvento(actual, pos){
         tipo = "rojo";
       }
       else if (actual === 2) {
-        tipo = "pares";
+        tipo = "par";
       }
       else if (actual === 3) {
-        tipo = "impares";
+        tipo = "impar";
       }
       else if (actual === 4) {
         tipo = "Primera mitad";
@@ -184,12 +180,12 @@ function agregarEvento(actual, pos){
     }
     for (var i = 0; i < apuestas.length; i++) {
       if (apuestas[i].getType() == tipo) {
-        apuestas[i].aumentarValor(1);
+        apuestas[i].aumentarValor(valorApuestas.valor);
         mostrarApuestas();
         return;
       }
     }
-    apuestas.push(new apuesta(tipo, 1));
+    apuestas.push(new apuesta(tipo, valorApuestas.valor));
     mostrarApuestas();
   };
 }
@@ -263,16 +259,23 @@ $("#tirar").click(function(){
   var gananciaTotal = 0;
   for (var i = 0; i < apuestas.length; i++) {
     if (apuestas[i].getType() === caract.color()) {
-      gananciaTotal = gananciaTotal + Math.floor(apuestas[i].getValor()*2);
+      gananciaTotal = gananciaTotal + (apuestas[i].getValor() * valorApuestas.color);
     }
     else if (apuestas[i].getType() === ganador) {
-      gananciaTotal = gananciaTotal + (apuestas[i].getValor() * (Math.floor(totalnum * 0.5)));
+      gananciaTotal = gananciaTotal + (apuestas[i].getValor() * valorApuestas.pleno);
     }
-    else if (apuestas[i].getType() === caract.paridad) {
-      gananciaTotal = gananciaTotal + Math.floor(apuestas[i].getValor()*2);
+    else if (apuestas[i].getType() === caract.paridad()) {
+      gananciaTotal = gananciaTotal + (apuestas[i].getValor() * valorApuestas.paridad);
     }
     else if (apuestas[i].getType() === caract.mitad()) {
-      gananciaTotal = gananciaTotal + Math.floor(apuestas[i].getValor()*2);
+      gananciaTotal = gananciaTotal + (apuestas[i].getValor() * valorApuestas.mitad);
+    }
+    else {
+      var posibleApuesta1 = ganador + "-" + (ganador+1);
+      var posibleApuesta2 = (ganador-1) + "-" + ganador;
+      if (posibleApuesta1 === apuestas[i].getType() || apuestas[i].getType() === posibleApuesta2) {
+        gananciaTotal = gananciaTotal + (apuestas[i].getValor() * valorApuestas.semipleno);
+      }
     }
   }
   player.aumentarCredito(gananciaTotal);
