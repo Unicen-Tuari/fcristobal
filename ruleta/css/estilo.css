@@ -64,7 +64,11 @@ footer{
   bottom: 0;
   width: 100%;
   font-size: 20px;
+}
+
+.separador, footer{
   clear: both;
+
 }
 
 #central{
@@ -147,7 +151,7 @@ footer{
 
 .apuestas, .tablaDeApuestas{
     position: relative;
-    top: 91px;
+    margin-top: 91px;
 }
 
 .tablaDeApuestas span{

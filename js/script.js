@@ -8,6 +8,12 @@ $( document ).ready(function() {
     $("#home").toggleClass("activado");
   });
 
+  $("#contacto").on("click", function(){
+    getInformationByItem("../html/contacto.html");
+    $(".activado").toggleClass("activado");
+    $("#contacto").toggleClass("activado");
+  });
+
   $("#catalogo").on("click", function(){
     getInformationByItem("../html/catalogo.html");
     $(".activado").toggleClass("activado");
