@@ -1,38 +1,38 @@
-body {
-  background-color: white;
+body{
+  color: #162955;
 }
 
-header, footer {
-  background-color: #FD525B;
+header{
   padding: 10px;
-  font-weight: bolder;
+  background-color:  #2E4172;
   color: white;
-  font-size: 50px;
-  box-shadow: 0px 0px 10px #FD525B;
 }
 
-#barraNav{
-  margin-top: 5px;
-}
-
-#barraNav input{
+.nav-personalizado, footer {
+  background-color: #2E4172;
   color: white;
-  background-color: #FD525B;
+  margin: 0px;
 }
 
-#barraNav input:hover{
-  background-color: white;
-  color: #FD525B;
-  text-shadow: 0px 0px 10px #FF7052;
+.nav-personalizado li:hover{
+  cursor: pointer;
+}
+
+.nav-personalizado ul li a{
+  color: #7887AB;
 }
 
 .logo{
+  background-color: #7887AB;
+  text-shadow: 0px 0px 10px white;
+  font-weight: bolder;
+    color: white;
+    font-size: 50px;
   float: left;
   padding-right: 10px;
   padding-left: 5px;
-  background-color: #E63C44;
   border-radius: 0px 30px 30px 0px;
-  border: 5px solid #FB4750;
+  border: 5px solid #4F618E;
 }
 
 footer, .separador{
@@ -41,12 +41,11 @@ footer, .separador{
 }
 
 footer{
-  bottom: 0px;
 }
 
 .activado{
   background-color: white !important;
-  color: #FD525B !important;
+  color: #4F628E !important;
 }
 
 .central{
@@ -76,7 +75,6 @@ input.Valores{
 
 .ofertas p, .articulo p{
   text-align: center;
-  color: #FF7052;
 }
 
 .central h1{
@@ -98,6 +96,13 @@ input.Valores{
 
 .ofertas header{
   background-color: red;
+}
+
+.cartel-ofertas{
+  text-align: center;
+  font-size: xx-large;
+  color: white;
+  font-weight: bolder;
 }
 
 .articulo img{

@@ -1,68 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>De Todo</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilo.css" charset="utf-8">
-  </head>
-  <body>
-    <header>
-      <span class="logo">DT</span>
-      <h1>De Todo Store</h1>
-      <span class="separador"></span>
-    </header>
-    <ul id="barraNav" class="nav nav-tabs">
-      <li role="presentation" ><input id="home" type="button" class="btn activado" value="HOME"></input></li>
-      <li role="presentation" id="productos"><input type="button" class="btn" value="productos"></input></li>
-      <li role="presentation" id="contacto"><input type="button" class="btn" value="contacto"></input></li>
-      <li role="presentation"><input onClick="getInformationByItem('576ab2589568d10300a17cf7')" id="catalogo" type="button" class="btn" value="catalogo"></input></li>
-    </ul>
-    <article id="contenedorCentral" class="central col-lg-8 well well-lg">
-      <h1>ULTIMOS INGRESOS</h1>
-      <section class="articulo col-md-4">
-        <img src="https://s31.postimg.org/6fw3ofnbv/canon.jpg" alt="cañon" />
-        <p>CAÑON LUZ LED AUDIORITMICO EFECTOS $1200</p>
-      </section>
-      <section class="articulo col-md-4">
-        <img src="https://s31.postimg.org/4gfhx0t0b/linterna.jpg" alt="linterna" />
-        <p>LINTERNA TACTICA LED 2000 LUMENES CON ZOOM</p>
-      </section>
-      <section class="articulo col-md-4">
-        <img src="https://s31.postimg.org/5p3dinkyj/caja.jpg" alt="caja" />
-        <p>CAJA FUERTE PARA NOTEBOOK Y VALORES $2600</p>
-      </section>
-      <span class="separador"></span>
-      <section class="articulo col-md-4">
-        <img src="https://s31.postimg.org/e3j06qlzv/movil.jpg" alt="movil" />
-        <p>CABEZA MOVIL PARLANTE (Sd,Usb) con CONTROL REMOTO $2000 </p>
-      </section>
-      <section class="articulo col-md-4">
-        <img src="https://s31.postimg.org/bde9naeor/u8.jpg" alt="reloj" />
-        <p>RELOJ SMARTWATCH U8 (Android Iphone) $900</p>
-      </section>
-      <span class="separador"></span>
-    </article>
-    <aside class="ofertas central col-lg-3 col-lg-offset-1 well well-lg">
-      <header>OFERTAS</header>
-      <section class="col-lg-12 col-md-6 col-sm-4">
-        <img src="https://s31.postimg.org/4rwy9s9gb/giratoria.jpg" alt="giratoria" />
-        <p>10 LUCES GIRATORIAS (EFECTO BOLICHE) A SOLO $1500</p>
-      </section>
-      <section class="col-lg-12 col-md-6 col-sm-4">
-        <img src="https://s31.postimg.org/lytjljvmj/tiraled.jpg" alt="tiraled" />
-        <p>TIRA LED RGB 5mts + FUENTE + CONTROLADOR A SOLO $500</p>
-      </section>
-    </aside>
-    <footer>
-      <span class="logo">DT</span>
-      <span class="separador"></span>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/jquery-3.0.0.min.js" charset="utf-8"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js" charset="utf-8"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>De Todo</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css" charset="utf-8">
+</head>
+<body>
+  <header>
+    <span class="logo">DT</span>
+    <h1>De Todo Store</h1>
+    <span class="separador"></span>
+  </header>
+  <nav class="nav-personalizado navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a id="home" type="button" class="activado" value="HOME">HOME</a></li>
+          <li><a id="productos" type="button" value="productos">productos</a></li>
+          <li><a id="contacto" type="button" value="contacto">contacto</a></li>
+          <li><a id="catalogo" type="button" value="catalogo">catalogo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--<nav class="nav-personalizado navbar navbar-default">
+  <div class="container-fluid">
+  <div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+<span class="logo">DT</span>
+</div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li><a id="home" type="button" class="activado" value="HOME"></a></li>
+<li><a id="productos" type="button" value="productos"></a></li>
+<li><a id="contacto" type="button" value="contacto"></a></li>
+<li><a id="catalogo" type="button" value="catalogo"></a></li>
+</ul>
+</div>
+</div>
+</nav> -->
+<article id="contenedorCentral">
+
+</article>
+<footer>
+  <span class="logo">DT</span>
+  <span class="separador"></span>
+</footer>
+<script src="js/jquery-3.0.0.min.js" charset="utf-8"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js" charset="utf-8"></script>
+</body>
 </html>

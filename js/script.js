@@ -1,18 +1,23 @@
 "use strict";
 
-$("#home").on("click", function(){
-  getInformationByItem('576a9cdb9568d10300a17cf2');
+$( document ).ready(function() {
+  getInformationByItem('"../html/home.html"');
+  $("#home").on("click", function(){
+    getInformationByItem('"../html/home.html"');
+  });
+
+  $("#catalogo").on("click", function(){
+    getInformationByItem("../html/catalogo.html");
+  });
 });
 
-$("#catalogo").on("click", function(){
-  getInformationByGroup();
-});
+
 
 function getInformationByItem(item){
   $.ajax({
     method: "GET",
     dataType: 'JSON',
-    url: "http://web-unicen.herokuapp.com/api/get/" + item,
+    url: item,
     success: function(resultData){
       //al decir que dataType es JSON, ya resultData es un objeto
       var html = "";
@@ -50,10 +55,11 @@ function crearTabla(resultData){
   html += '</tbody></table>';
   html += inputsCatalogo();
   $("#contenedorCentral").html(html);
-  $("#agregar")on.("click", function(){
+  $("#agregar").on("click", function(){
     guardarInformacion();
   });
 }
+
 
 function getInformationByGroup(){
   var grupo = 159;
@@ -107,7 +113,7 @@ function guardarInformacion(){
     },
     error:function(jqxml, status, errorThrown){
       console.log(errorThrown);
-      $("#guardarAlert").addClass("alert-danger")
+      $("#guardarAlert").addClass("alert-danger");
       $("#guardarAlert").html("Error por favor intente mas tarde");
     }
   });
