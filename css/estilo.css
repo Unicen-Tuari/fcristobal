@@ -117,3 +117,7 @@ input.Valores{
 .articulo img{
   width: 100%;
 }
+
+.imagen {
+  padding: 20px;
+}
