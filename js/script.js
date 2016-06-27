@@ -21,8 +21,7 @@ function getInformationByItem(item){
     success: function(resultData){
       //al decir que dataType es JSON, ya resultData es un objeto
       var html = "";
-      html += resultData.information['thing'];
-      html = html.substring(7)
+      html += resultData;
       $("#contenedorCentral").html(html);
     },
     error:function(jqxml, status, errorThrown){
