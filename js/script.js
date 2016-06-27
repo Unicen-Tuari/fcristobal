@@ -16,7 +16,7 @@ $( document ).ready(function() {
 function getInformationByItem(item){
   $.ajax({
     method: "GET",
-    dataType: 'JSON',
+    dataType: 'html',
     url: item,
     success: function(resultData){
       //al decir que dataType es JSON, ya resultData es un objeto
