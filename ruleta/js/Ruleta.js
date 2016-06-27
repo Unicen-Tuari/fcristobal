@@ -1,7 +1,7 @@
 "use strict";
 
 var valorApuestas = {
-  valor: 5,
+  valor: 1,
   paridad: 2,
   color: 2,
   mitad: 2,
@@ -14,6 +14,7 @@ var doble = false;
 
 /*------------------------------CARGA DE TABLERO----------------------------*/
 function jugador(){
+/*funcion creadora de jugadores*/
   return{
     credito: 100,
     getCredit: function(){
@@ -29,10 +30,15 @@ function jugador(){
 }
 
 function numero(valor, total){
+  var mitad = total/2;
   return {
     numero: valor,
     paridad:function () {
+      if (this.numero === 0) {
+        return null;
+      }
       if (this.numero % 2 === 0) {
+
         return 'par';
       }
       else {
@@ -51,7 +57,6 @@ function numero(valor, total){
       if (this.numero === 0) {
         return null;
       }
-      var mitad = total/2;
       if (this.numero < mitad) {
         if (this.numero % 2 === 0 ) {
           return "negro";
@@ -116,7 +121,7 @@ function tablero(cantNum){
         }
         string = string + '<input type="button" class="pop col-md-4 '+clase+'" value="' + i + '"></input>';
       }
-      string = string + '<footer></footer></section><section class="tablaDeApuestas col-md-4"></section>';
+      string = string + '<div class="separador"></div></section><section class="tablaDeApuestas col-md-4"></section><div class="separador"></div>';
       $("#central").html(string);
       mostrarNumeros();
       var pos = ".tabla input";
@@ -234,7 +239,7 @@ function crearInput(cantNum){
 var player = new jugador();
 
 $("#generaTablero").submit(function(){
-  var nums = document.getElementById('cantidad').value;
+  var nums = $('#cantidad').val();
   var tableroR = new tablero(nums);
   tableroR.mostrarTablero();
   /*$(".apuestas .numN").hover(
