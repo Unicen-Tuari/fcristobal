@@ -4,13 +4,16 @@ $( document ).ready(function() {
   getInformationByItem("../html/home.html");
   $("#home").on("click", function(){
     getInformationByItem("../html/home.html");
+    $(".activado").toggleClass("activado");
+    $("#home").toggleClass("activado");
   });
 
   $("#catalogo").on("click", function(){
     getInformationByItem("../html/catalogo.html");
+    $(".activado").toggleClass("activado");
+    $("#catalogo").toggleClass("activado");
   });
 });
-
 
 
 function getInformationByItem(item){
