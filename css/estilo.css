@@ -16,6 +16,15 @@ header{
 
 .nav-personalizado li:hover{
   cursor: pointer;
+  background-color: #7887AB;
+}
+
+.nav-personalizado a:hover{
+  color: white !important;
+}
+
+.nav-personalizado a.activado:hover{
+  color: #777 !important;
 }
 
 .nav-personalizado ul li a{
