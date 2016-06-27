@@ -1,9 +1,9 @@
 "use strict";
 
 $( document ).ready(function() {
-  getInformationByItem('"../html/home.html"');
+  getInformationByItem("../html/home.html");
   $("#home").on("click", function(){
-    getInformationByItem('"../html/home.html"');
+    getInformationByItem("../html/home.html");
   });
 
   $("#catalogo").on("click", function(){
