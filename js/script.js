@@ -1,26 +1,25 @@
 "use strict";
 
 $( document ).ready(function() {
-  getInformationByItem("../html/home.html");
+  getInformationByItem("../html/home.html", "#home");
   $("#home").on("click", function(){
-    getInformationByItem("../html/home.html");
-    $(".activado").toggleClass("activado");
-    $("#home").toggleClass("activado");
+    cargarContenido("../html/home.html", );
   });
 
   $("#contacto").on("click", function(){
-    getInformationByItem("../html/contacto.html");
-    $(".activado").toggleClass("activado");
-    $("#contacto").toggleClass("activado");
+    cargarContenido("../html/contacto.html", "#contacto");
   });
 
   $("#catalogo").on("click", function(){
-    getInformationByItem("../html/catalogo.html");
-    $(".activado").toggleClass("activado");
-    $("#catalogo").toggleClass("activado");
+    cargarContenido("../html/catalogo.html", "#catalogo");
   });
 });
 
+function cargarContenido(html, btn){
+  getInformationByItem(html);
+  $(".activado").toggleClass("activado");
+  $(btn).toggleClass("activado");
+}
 
 function getInformationByItem(item){
   $.ajax({

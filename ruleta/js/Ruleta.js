@@ -110,8 +110,8 @@ function tablero(cantNum){
     mostrarTablero: function(){
       var clase = "";
       var apuestasAdicionales = crearInput(this.numeros.length);
-      var string = '<section class="col-sm-4 col-xs-6"><section class="apuestas col-sm-12">'+apuestasAdicionales+'</section><div class="separador"></div></section>'
-      string = string + '<section class="col-sm-4 col-xs-6 tabla"><input type="button" id="cero" class="pop col-sm-12" value="0"></input>';
+      var string = '<section class="col-sm-6 col-md-4 col-xs-12"><section class="apuestas col-sm-12">'+apuestasAdicionales+'</section><div class="separador"></div></section>'
+      string = string + '<section class="col-md-4 col-sm-6 col-xs-12 tabla"><input type="button" id="cero" class="pop col-xs-12" value="0"></input>';
       for (var i = 1; i < this.numeros.length; i++) {
         if (this.numeros[i].color() === "negro") {
           clase = "numN"
@@ -119,9 +119,9 @@ function tablero(cantNum){
         else {
           clase = "numR";
         }
-        string = string + '<input type="button" class="pop col-sm-4 '+clase+'" value="' + i + '"></input>';
+        string = string + '<input type="button" class="pop col-xs-4 '+clase+'" value="' + i + '"></input>';
       }
-      string = string + '<div class="separador"></div></section><section class="tablaDeApuestas col-sm-4"></section><div class="separador"></div>';
+      string = string + '<div class="separador"></div></section><section class="tablaDeApuestas col-sm-4 col-xs-12"></section><div class="separador"></div>';
       $("#central").html(string);
       mostrarNumeros();
       var pos = ".tabla input";
@@ -220,15 +220,15 @@ function mostrarUno(arrInput, i) {
 
 function crearInput(cantNum){
   var mitad = Math.floor(cantNum/2);
-  var string = '<input type="button" class="pop numN col-sm-6" value="negros"></input>';
-  string = string + '<input type="button" class="pop numR col-sm-6" value="rojos"></input>';
-  string = string + '<input type="button" class="pop adicionales col-sm-6" value="pares"></input>';
-  string = string + '<input type="button" class="pop adicionales col-sm-6" value="impares"></input>';
-  string = string + '<input type="button" class="pop adicionales col-sm-6" value="'+"1-"+mitad+'"></input>';
+  var string = '<input type="button" class="pop numN col-xs-12 col-sm-6" value="negros"></input>';
+  string = string + '<input type="button" class="pop numR col-xs-12 col-sm-6" value="rojos"></input>';
+  string = string + '<input type="button" class="pop adicionales col-xs-12 col-sm-6" value="pares"></input>';
+  string = string + '<input type="button" class="pop adicionales col-xs-12 col-sm-6" value="impares"></input>';
+  string = string + '<input type="button" class="pop adicionales col-xs-12 col-sm-6" value="'+"1-"+mitad+'"></input>';
   mitad++;
-  string = string + '<input type="button" class="pop adicionales col-sm-6" value="'+mitad+'-'+cantNum+'"></input>';
-  string = string + '<input id="dobles" type="button" class="pop adicionales col-sm-12" value="dobles"></input>'
-  string = string + '<input id="tirar" type="button" class="pop adicionales col-sm-12" value="TIRAR!"></input><div class="separador"></div>';
+  string = string + '<input type="button" class="pop adicionales col-xs-12 col-sm-6" value="'+mitad+'-'+cantNum+'"></input>';
+  string = string + '<input id="dobles" type="button" class="pop adicionales col-xs-12" value="dobles"></input>'
+  string = string + '<input id="tirar" type="button" class="pop adicionales col-xs-12" value="TIRAR!"></input><div class="separador"></div>';
   return string;
 }
 
