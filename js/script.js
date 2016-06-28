@@ -3,7 +3,7 @@
 $( document ).ready(function() {
   getInformationByItem("../html/home.html", "#home");
   $("#home").on("click", function(){
-    cargarContenido("../html/home.html", );
+    cargarContenido("../html/home.html", "#home");
   });
 
   $("#contacto").on("click", function(){
