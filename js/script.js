@@ -10,6 +10,10 @@ $( document ).ready(function() {
     cargarContenido("../html/contacto.html", "#contacto");
   });
 
+  $("#productos").on("click", function(){
+    cargarContenido("../html/productos.html", "#productos");
+  });
+
   $("#catalogo").on("click", function(){
     cargarContenido("../html/catalogo.html", "#catalogo");
   });
