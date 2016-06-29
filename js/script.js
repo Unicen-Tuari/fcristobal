@@ -41,6 +41,11 @@ function getInformationByItem(item){
       else if (item === "../html/productos.html") {
         cargarProductos();
       }
+      else if (item === "../html/productos.html") {
+        $("#reloh").on("click", function(){
+          getInformationByItem("../html/produ.html");
+        })
+      }
     },
     error:function(jqxml, status, errorThrown){
       console.log(errorThrown);
