@@ -116,7 +116,7 @@ function guardarInformacion(){
     informacion += '</td>';
   }*/
   informacion.
-  if !(isValidJson(informacion)){
+  if (!(isValidJson(informacion))){
     return alert("JSON invalido");
   }
   //la estructura que debemos enviar es especifica de cada servicio que usemos
