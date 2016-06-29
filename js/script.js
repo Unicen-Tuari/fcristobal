@@ -66,21 +66,21 @@ function crearTabla(resultData){
   }
   html += '</tbody></table>';
   html += inputsCatalogo();
-  html += '<div>'
+  html += '</div>'
   $("#contenedorCentral").html(html);
   $("#agregar").on("click", function(){
     guardarInformacion();
   });
   var botonesEliminar = $(".eliminar");
   for (var i = 0; i < botonesEliminar.length; i++) {
-    asignarEliminar(botonesEliminar[i], resultData.information[i]['_id']);
+    asignarEliminar(botonesEliminar, i, resultData.information[i]['_id']);
   }
 }
 
-function asignarEliminar(boton, id){
-  boton.click = function(){
+function asignarEliminar(boton, i, id){
+  boton[i].on("click", function(){
     deleteInformationByItem(id);
-  }
+  })
 }
 
 function deleteInformationByItem(item) {
