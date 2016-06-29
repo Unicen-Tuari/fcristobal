@@ -40,18 +40,22 @@ function getInformationByItem(item){
       }
       else if (item === "../html/productos.html") {
         cargarProductos();
-        $(".reloh")[0].onclick = function(){
-          getInformationByItem("../html/produ.html");
-        }
-        $(".reloh")[1].onclick = function(){
-          getInformationByItem("../html/produ.html");
-        }
+        cargarLinkAProducto();
+      }
+      else if (item === "../html/home.html") {
+        cargarLinkAProducto();
       }
     },
     error:function(jqxml, status, errorThrown){
       console.log(errorThrown);
     }
   });
+}
+
+function cargarLinkAProducto(){
+  $(".reloh")[0].onclick = function(){
+    getInformationByItem("../html/produ.html");
+  }
 }
 
 function inputsCatalogo(){
