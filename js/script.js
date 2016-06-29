@@ -56,6 +56,7 @@ function crearTabla(resultData){
   var html = '<div class="catalogo"><table class="table table-hover"><thead><td>CODIGO</td><td>DESCRIPCION</td><td>PRECIO</td></thead><tbody>';
   var html2 = "";
   for (var i = 0; i < resultData.information.length; i++) {
+    html2 = "";
     html += '<tr>';
     html2 += '<td>'+resultData.information[i]['thing'].codigo+'</td>';
     html2 += '<td>'+resultData.information[i]['thing'].descripcion+'</td>';
