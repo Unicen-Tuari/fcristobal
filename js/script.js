@@ -109,11 +109,15 @@ function guardarInformacion(){
   //la estructura que debemos enviar es especifica de cada servicio que usemos
   //en este caso un hay que enviar un objeto con el numero de grupo y con lo que queramos guardarInformacion
   //thing puede ser un objeto JSON con tanta información como queramos (en este servicio)
+  var info = {
+ "group": grupo,
+ "thing": informacion
+};
   $.ajax({
     method: "POST",
     dataType: 'JSON',
     //se debe serializar (stringify) la informacion (el "data:" de ida es de tipo string)
-    data: JSON.stringify(informacion),
+    data: JSON.stringify(info),
     contentType: "application/json; charset=utf-8",
     url: "http://web-unicen.herokuapp.com/api/create",
     success: function(resultData){
