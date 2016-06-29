@@ -40,7 +40,10 @@ function getInformationByItem(item){
       }
       else if (item === "../html/productos.html") {
         cargarProductos();
-        $("#reloh")[0].onclick = function(){
+        $(".reloh")[0].onclick = function(){
+          getInformationByItem("../html/produ.html");
+        }
+        $(".reloh")[1].onclick = function(){
           getInformationByItem("../html/produ.html");
         }
       }
