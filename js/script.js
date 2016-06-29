@@ -12,7 +12,6 @@ $( document ).ready(function() {
 
   $("#catalogo").on("click", function(){
     cargarContenido("../html/catalogo.html", "#catalogo");
-    getInformationByGroup();
   });
 });
 
@@ -32,6 +31,7 @@ function getInformationByItem(item){
       var html = "";
       html += resultData;
       $("#contenedorCentral").html(html);
+      getInformationByGroup();
     },
     error:function(jqxml, status, errorThrown){
       console.log(errorThrown);
