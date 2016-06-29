@@ -182,7 +182,7 @@ function mostrar(numero){
   for (var i = 0; i < listas.length; i++){
     listas[i].style.display = 'none';
   }
-  listas[numero].style.display = 'block');
+  listas[numero].style.display = 'block';
 }
 
 function cargarProductos() {
