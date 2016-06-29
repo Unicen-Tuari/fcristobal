@@ -61,7 +61,7 @@ function crearTabla(resultData){
     html2 += '<td>'+resultData.information[i]['thing'].codigo+'</td>';
     html2 += '<td>'+resultData.information[i]['thing'].descripcion+'</td>';
     html2 += '<td>$'+resultData.information[i]['thing'].precio+'</td>'
-    html2 += '<td><input class="eliminar" type="button" value="eliminar"></input>'
+    html2 += '<td><input class="btn eliminar" type="button" value="eliminar"></input>'
     html += html2+'</tr>';
   }
   html += '</tbody></table>';
