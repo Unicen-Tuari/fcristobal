@@ -36,6 +36,9 @@ function getInformationByItem(item){
       $("#contenedorCentral").html(html);
       if (item === "../html/catalogo.html") {
         getInformationByGroup();
+        $("#agregar").on("click", function(){
+          guardarInformacion();
+        });
       }
       else if (item === "../html/productos.html") {
         cargarProductos();
@@ -81,9 +84,6 @@ function crearTabla(resultData){
     html += '</tr>';
   }
   $("#tabla").html(html);
-  $("#agregar").on("click", function(){
-    guardarInformacion();
-  });
   var botonesEliminar = $(".eliminar");
   for (var i = 0; i < botonesEliminar.length; i++) {
     asignarEliminar(i, resultData.information[i]['_id']);
