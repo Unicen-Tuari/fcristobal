@@ -138,7 +138,7 @@ input.Valores{
   display: none;
 }
 
-.filtro, .prodfiltrado{
+.filtro, .prodfiltrado ul{ 
   list-style-type: none;
   text-decoration: none;
   color: #222;
