@@ -179,7 +179,7 @@ function guardarInformacion(){
 
 function mostrar(numero, boton){
   var listas = $(".prodfiltrado");
-  boton.click = function(){
+  boton.onclick = function(){
     for (var i = 0; i < listas.length; i++){
       listas[i].style.display = 'none';
     }
