@@ -181,10 +181,14 @@ function mostrar(numero, boton){
   var listas = $(".prodfiltrado");
   boton.onclick = function(){
     for (var i = 0; i < listas.length; i++){
-      listas[i].style.display = 'none';
+      borrarListas(listas[i]);
     }
     listas[numero].style.display = 'block';
   }
+}
+
+function borrarListas(lista) {
+  lista.style.display = 'none';
 }
 
 function cargarProductos() {
