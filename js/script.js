@@ -64,7 +64,7 @@ function crearTabla(resultData){
   $("#contenedorCentral").html(html);
   $("#agregar").on("click", function(){
     guardarInformacion();
-    getInformationByGroup();
+    /*getInformationByGroup();*/
   });
 }
 
@@ -127,10 +127,6 @@ function guardarInformacion(){
   });
 }
 
-
-function agregarComportamiento(){
-  $("#agregar").on("click", guardarInformacion());
-}
 
 /*$("#catalogo").click(getInformationByItem('576ab2589568d10300a17cf7'));*/
 
