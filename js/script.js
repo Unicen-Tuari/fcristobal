@@ -57,7 +57,7 @@ function cargarLinkAProducto(){
   }
 }
 
-function inputsCatalogo(){
+/*function inputsCatalogo(){
   var string = "<div>Agregar valores nuevos: </div>"
   string += '<span class="col-xs-6 col-sm-2">CODIGO: </span>';
   string += '<input type="text" class="btn col-xs-6 col-sm-2 Valores"></input> ';
@@ -68,24 +68,19 @@ function inputsCatalogo(){
   string += '<input id="agregar" type="button" class="btn col-xs-12 col-sm-6 col-sm-offset-3" value="AGREGAR">'
   string += '<div class="col-xs-12" id="guardarAlert"></div>';
   return string;
-}
+}*/
 
 function crearTabla(resultData){
-  var html = '<div class="catalogo"><table class="table table-hover"><thead><td>CODIGO</td><td>DESCRIPCION</td><td>PRECIO</td><td></td></thead><tbody>';
-  var html2 = "";
+  var html = "";
   for (var i = 0; i < resultData.information.length; i++) {
-    html2 = "";
     html += '<tr>';
-    html2 += '<td>'+resultData.information[i]['thing'].codigo+'</td>';
-    html2 += '<td>'+resultData.information[i]['thing'].descripcion+'</td>';
-    html2 += '<td>$'+resultData.information[i]['thing'].precio+'</td>'
-    html2 += '<td><input class="btn eliminar" type="button" value="eliminar"></input>'
-    html += html2+'</tr>';
+    html += '<td>'+resultData.information[i]['thing'].codigo+'</td>';
+    html += '<td>'+resultData.information[i]['thing'].descripcion+'</td>';
+    html += '<td>$'+resultData.information[i]['thing'].precio+'</td>'
+    html += '<td><input class="btn eliminar" type="button" value="eliminar"></input>'
+    html += '</tr>';
   }
-  html += '</tbody></table>';
-  html += inputsCatalogo();
-  html += '</div><div class="separador"></div>'
-  $("#pagCatalogo").html(html);
+  $("#tabla").html(html);
   $("#agregar").on("click", function(){
     guardarInformacion();
   });
