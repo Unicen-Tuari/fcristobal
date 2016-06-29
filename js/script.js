@@ -69,7 +69,6 @@ function crearTabla(resultData){
   $("#contenedorCentral").html(html);
   $("#agregar").on("click", function(){
     guardarInformacion();
-    getInformationByGroup();
   });
 }
 
@@ -127,13 +126,16 @@ function guardarInformacion(){
       //la estructura que devuelve es especifica de cada servicio que usemos
       $("#guardarAlert").html("Guardado");
       console.log(resultData.information);
+      getInformationByGroup();
     },
     error:function(jqxml, status, errorThrown){
       console.log(errorThrown);
       $("#guardarAlert").addClass("alert-danger");
       $("#guardarAlert").html("Error por favor intente mas tarde");
     }
-  });
+  },
+  $("#guardarAlert").html("Guardado")
+);
 }
 
 
