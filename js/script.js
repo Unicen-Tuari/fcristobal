@@ -70,7 +70,7 @@ function crearTabla(resultData){
 
 
 function getInformationByGroup(){
-  var grupo = 159;
+  var grupo = 99;
   $.ajax({
     method: "GET",
     dataType: 'JSON',
@@ -85,7 +85,7 @@ function getInformationByGroup(){
 }
 
 function guardarInformacion(){
-  var grupo = 159;
+  var grupo = 99;
   var informacion = "";
   var inputs = $(".Valores");
   for (var i = 0; i < inputs.length; i++) {
