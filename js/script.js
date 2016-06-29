@@ -64,6 +64,7 @@ function crearTabla(resultData){
   $("#contenedorCentral").html(html);
   $("#agregar").on("click", function(){
     guardarInformacion();
+    getInformationByGroup();
   });
 }
 

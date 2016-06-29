@@ -50,6 +50,8 @@ footer, .separador{
 }
 
 footer{
+  position: fixed;
+  width: 100%;
 }
 
 .activado{
