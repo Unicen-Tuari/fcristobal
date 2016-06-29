@@ -178,11 +178,11 @@ function guardarInformacion(){
 /*$("#catalogo").click(getInformationByItem('576ab2589568d10300a17cf7'));*/
 
 function mostrar(numero){
-  var listas = $(".prodfiltrado")
+  var listas = $(".prodfiltrado");
   for (var i = 0; i < listas.length; i++){
-    listas[i].css("display", 'none');
+    listas[i].style.display = 'none';
   }
-  listas[numero].css("display", 'block');
+  listas[numero].style.display = 'block');
 }
 
 function cargarProductos() {
