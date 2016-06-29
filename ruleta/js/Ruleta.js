@@ -242,10 +242,6 @@ $("#generaTablero").submit(function(){
   var nums = $('#cantidad').val();
   var tableroR = new tablero(nums);
   tableroR.mostrarTablero();
-  /*$(".apuestas .numN").hover(
-  function(){$(".numN").css("text-shadow", "0px 0px 10px white")},
-  function(){$(".numN").css("text-shadow", "0px 0px 0px white")}
-);*/
 $("#dobles").click(function(){
   if (doble) {
     doble = false;

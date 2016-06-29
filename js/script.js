@@ -31,7 +31,6 @@ function getInformationByItem(item){
     dataType: 'html',
     url: item,
     success: function(resultData){
-      //al decir que dataType es JSON, ya resultData es un objeto
       var html = "";
       html += resultData;
       $("#contenedorCentral").html(html);
@@ -151,9 +150,6 @@ function guardarInformacion(){
   informacion.codigo = inputs[0].value;
   informacion.descripcion = inputs[1].value;
   informacion.precio = inputs[2].value;
-  //la estructura que debemos enviar es especifica de cada servicio que usemos
-  //en este caso un hay que enviar un objeto con el numero de grupo y con lo que queramos guardarInformacion
-  //thing puede ser un objeto JSON con tanta información como queramos (en este servicio)
   var info = {
     "group": grupo,
     "thing": informacion
@@ -161,15 +157,12 @@ function guardarInformacion(){
   $.ajax({
     method: "POST",
     dataType: 'JSON',
-    //se debe serializar (stringify) la informacion (el "data:" de ida es de tipo string)
     data: JSON.stringify(info),
     contentType: "application/json; charset=utf-8",
     url: "http://web-unicen.herokuapp.com/api/create",
     success: function(resultData){
       $("#guardarAlert").removeClass("alert-danger")
       $("#guardarAlert").addClass("alert-success")
-      //como le dimos dataType:"JSON" el resultData ya es un objeto
-      //la estructura que devuelve es especifica de cada servicio que usemos
       $("#guardarAlert").html("Guardado");
       console.log(resultData.information);
       getInformationByGroup();
@@ -183,9 +176,6 @@ function guardarInformacion(){
   $("#guardarAlert").html("Cargando...")
 );
 }
-
-
-/*$("#catalogo").click(getInformationByItem('576ab2589568d10300a17cf7'));*/
 
 function mostrar(numero, boton){
   var listas = $(".prodfiltrado");
