@@ -58,7 +58,7 @@ function cargarLinkAProducto(){
 }
 
 function inputsCatalogo(){
-  var string = "Agregar valores nuevos: <br />"
+  var string = "<div>Agregar valores nuevos: </div>"
   string += '<span class="col-xs-6 col-sm-2">CODIGO: </span>';
   string += '<input type="text" class="btn col-xs-6 col-sm-2 Valores"></input> ';
   string += '<span class="col-xs-6 col-sm-2">DESCRIPCION: </span>';
