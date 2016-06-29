@@ -35,7 +35,12 @@ function getInformationByItem(item){
       var html = "";
       html += resultData;
       $("#contenedorCentral").html(html);
-      getInformationByGroup();
+      if (item === "../html/catalogo.html") {
+        getInformationByGroup();
+      }
+      else if (item === "../html/productos.html") {
+        cargarProductos();
+      }
     },
     error:function(jqxml, status, errorThrown){
       console.log(errorThrown);
