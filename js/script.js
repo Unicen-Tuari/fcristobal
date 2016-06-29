@@ -79,9 +79,9 @@ function crearTabla(resultData){
 
 function asignarEliminar(i, id){
   var boton = $(".eliminar")[i];
-  boton.on("click", function(){
+  boton.onclick = function(){
     deleteInformationByItem(id);
-  })
+  }
 }
 
 function deleteInformationByItem(item) {
