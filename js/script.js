@@ -145,9 +145,9 @@ function guardarInformacion(){
   //en este caso un hay que enviar un objeto con el numero de grupo y con lo que queramos guardarInformacion
   //thing puede ser un objeto JSON con tanta información como queramos (en este servicio)
   var info = {
- "group": grupo,
- "thing": informacion
-};
+    "group": grupo,
+    "thing": informacion
+  };
   $.ajax({
     method: "POST",
     dataType: 'JSON',
@@ -177,19 +177,19 @@ function guardarInformacion(){
 
 /*$("#catalogo").click(getInformationByItem('576ab2589568d10300a17cf7'));*/
 
-function mostrar(numero){
+function mostrar(numero, boton){
   var listas = $(".prodfiltrado");
-  for (var i = 0; i < listas.length; i++){
-    listas[i].style.display = 'none';
+  boton.click = function(){
+    for (var i = 0; i < listas.length; i++){
+      listas[i].style.display = 'none';
+    }
+    listas[numero].style.display = 'block';
   }
-  listas[numero].style.display = 'block';
 }
 
 function cargarProductos() {
   var botones = $(".filtro input");
   for (var i = 0; i < botones.length; i++) {
-    botones[i].onclick = function(){
-      mostrar(i);
-    }
+    mostrar(i, botones[i]);
   }
 }
