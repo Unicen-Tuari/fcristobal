@@ -57,7 +57,9 @@ function crearTabla(resultData){
   var html2 = "";
   for (var i = 0; i < resultData.information.length; i++) {
     html += '<tr>';
-    html2 += resultData.information[i]['thing'];
+    html2 += '<td>'+resultData.information[i]['thing'].codigo+'</td>';
+    html2 += '<td>'+resultData.information[i]['thing'].descripcion+'</td>';
+    html2 += '<td>$'+resultData.information[i]['thing'].precio+'</td>'
     html += html2+'</tr>';
   }
   html += '</tbody></table>';
@@ -94,18 +96,15 @@ function guardarInformacion(){
     precio: null
   };
   var inputs = $(".Valores");
-  informacion.codigo = inputs[0].value;
-  informacion.descripcion = inputs[1].value;
-  informacion.precio = inputs[2].value;
-  /*for (var i = 0; i < inputs.length; i++) {
+  for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].value == "") {
       alert('debe llenar todos los campos');
       return;
     }
-    informacion += '<td>';
-    informacion += inputs[i].value;
-    informacion += '</td>';
-  }*/
+  }
+  informacion.codigo = inputs[0].value;
+  informacion.descripcion = inputs[1].value;
+  informacion.precio = inputs[2].value;
   //la estructura que debemos enviar es especifica de cada servicio que usemos
   //en este caso un hay que enviar un objeto con el numero de grupo y con lo que queramos guardarInformacion
   //thing puede ser un objeto JSON con tanta información como queramos (en este servicio)
@@ -125,7 +124,7 @@ function guardarInformacion(){
       $("#guardarAlert").addClass("alert-success")
       //como le dimos dataType:"JSON" el resultData ya es un objeto
       //la estructura que devuelve es especifica de cada servicio que usemos
-      $("#guardarAlert").html("Guardado=" + resultData.information);
+      $("#guardarAlert").html("Guardado");
       console.log(resultData.information);
     },
     error:function(jqxml, status, errorThrown){
