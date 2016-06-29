@@ -89,12 +89,12 @@ function getInformationByGroup(){
 function guardarInformacion(){
   var grupo = 99;
   var informacion = {
-    "codigo": null,
-    "descripcion": null,
-    "precio": null
+    codigo: null,
+    descripcion: null,
+    precio: null
   };
   var inputs = $(".Valores");
-  informacion.codigo = inputs[0].value;
+  informacion.codigo = +inputs[0].value+;
   informacion.descripcion = inputs[1].value;
   informacion.precio = inputs[2].value;
   /*for (var i = 0; i < inputs.length; i++) {
