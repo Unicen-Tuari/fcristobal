@@ -53,7 +53,7 @@ function inputsCatalogo(){
 }
 
 function crearTabla(resultData){
-  var html = '<div class="catalogo"><table class="table table-hover"><thead><td>CODIGO</td><td>DESCRIPCION</td><td>PRECIO</td></thead><tbody>';
+  var html = '<div class="catalogo"><table class="table table-hover"><thead><td>CODIGO</td><td>DESCRIPCION</td><td>PRECIO</td><td></td></thead><tbody>';
   var html2 = "";
   for (var i = 0; i < resultData.information.length; i++) {
     html2 = "";
@@ -61,6 +61,7 @@ function crearTabla(resultData){
     html2 += '<td>'+resultData.information[i]['thing'].codigo+'</td>';
     html2 += '<td>'+resultData.information[i]['thing'].descripcion+'</td>';
     html2 += '<td>$'+resultData.information[i]['thing'].precio+'</td>'
+    html2 += '<td><input class="eliminar" type="button" value="eliminar"></input>'
     html += html2+'</tr>';
   }
   html += '</tbody></table>';
@@ -70,8 +71,34 @@ function crearTabla(resultData){
   $("#agregar").on("click", function(){
     guardarInformacion();
   });
+  var botonesEliminar = $(".eliminar");
+  for (var i = 0; i < botonesEliminar.length; i++) {
+    asignarEliminar(botonesEliminar[i], i, resultData.information[i]['_id']);
+  }
 }
 
+function asignarEliminar(boton, numero, id){
+  var rowAEliminar = numero+1;//el primer row es del header de la tabla
+  boton.on("click", function(){
+    deleteInformationByItem(id);
+    getInformationByGroup();
+  })
+}
+
+function deleteInformationByItem(item) {
+  var id=item;
+  $.ajax({
+    url:"http://web-unicen.herokuapp.com/api/delete/" + id,
+    method:"DELETE",
+    success: function(resultData){
+      console.log(resultData);;
+    },
+    error:function(jqxml, status, errorThrown){
+      alert('Error!');
+      console.log(errorThrown);
+    }
+  });
+}
 
 function getInformationByGroup(){
   var grupo = 99;
