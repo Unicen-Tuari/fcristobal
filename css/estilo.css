@@ -126,6 +126,10 @@ input.Valores{
 }
 
 #pagCatalogo{
-  padding: 20px;
+  padding: 40px;
   text-align: center;
+}
+
+#pagCatalogo #agregar{
+  margin-top: 20px;
 }
