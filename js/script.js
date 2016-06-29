@@ -134,7 +134,7 @@ function guardarInformacion(){
       $("#guardarAlert").html("Error por favor intente mas tarde");
     }
   },
-  $("#guardarAlert").html("Guardado")
+  $("#guardarAlert").html("Cargando...")
 );
 }
 
