@@ -73,12 +73,13 @@ function crearTabla(resultData){
   });
   var botonesEliminar = $(".eliminar");
   for (var i = 0; i < botonesEliminar.length; i++) {
-    asignarEliminar(botonesEliminar, i, resultData.information[i]['_id']);
+    asignarEliminar(i, resultData.information[i]['_id']);
   }
 }
 
-function asignarEliminar(boton, i, id){
-  boton[i].on("click", function(){
+function asignarEliminar(i, id){
+  var boton = $(".eliminar")[i];
+  boton.on("click", function(){
     deleteInformationByItem(id);
   })
 }
