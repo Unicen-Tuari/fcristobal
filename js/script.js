@@ -115,7 +115,6 @@ function guardarInformacion(){
     informacion += inputs[i].value;
     informacion += '</td>';
   }*/
-  informacion.
   if (!(isValidJson(informacion))){
     return alert("JSON invalido");
   }
