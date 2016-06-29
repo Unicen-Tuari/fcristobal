@@ -188,8 +188,8 @@ function mostrar(numero){
 function cargarProductos() {
   var botones = $(".filtro input");
   for (var i = 0; i < botones.length; i++) {
-    botones[i].onclick = function(){
+    botones[i].click(function(){
       mostrar(i);
-    }
+    })
   }
 }
