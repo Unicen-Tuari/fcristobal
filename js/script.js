@@ -40,11 +40,9 @@ function getInformationByItem(item){
       }
       else if (item === "../html/productos.html") {
         cargarProductos();
-      }
-      else if (item === "../html/productos.html") {
-        $("#reloh").on("click", function(){
+        $("#reloh").onclick = function(){
           getInformationByItem("../html/produ.html");
-        })
+        }
       }
     },
     error:function(jqxml, status, errorThrown){
