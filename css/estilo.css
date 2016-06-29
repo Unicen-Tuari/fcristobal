@@ -137,3 +137,13 @@ input.Valores{
 .prodfiltrado{
   display: none;
 }
+
+.filtro, .prodfiltrado{
+  list-style-type: none;
+  text-decoration: none;
+  color: #222;
+}
+
+.filtro{
+  background-color: #7887AB;
+}
