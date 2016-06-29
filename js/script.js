@@ -121,7 +121,7 @@ function guardarInformacion(){
       $("#guardarAlert").addClass("alert-success")
       //como le dimos dataType:"JSON" el resultData ya es un objeto
       //la estructura que devuelve es especifica de cada servicio que usemos
-      $("#guardarAlert").html("Guardado=" + resultData.information._id);
+      $("#guardarAlert").html("Guardado=" + resultData.information);
       console.log(resultData);
     },
     error:function(jqxml, status, errorThrown){
