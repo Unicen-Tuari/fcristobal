@@ -67,7 +67,7 @@ function crearTabla(resultData){
   html += '</tbody></table>';
   html += inputsCatalogo();
   html += '</div>'
-  $("#contenedorCentral").html(html);
+  $("#catalogo").html(html);
   $("#agregar").on("click", function(){
     guardarInformacion();
   });
