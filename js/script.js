@@ -53,7 +53,7 @@ function inputsCatalogo(){
 }
 
 function crearTabla(resultData){
-  var html = '<table class="table table-hover"><thead><td>CODIGO</td><td>DESCRIPCION</td><td>PRECIO</td></thead><tbody>';
+  var html = '<div class="catalogo"><table class="table table-hover"><thead><td>CODIGO</td><td>DESCRIPCION</td><td>PRECIO</td></thead><tbody>';
   var html2 = "";
   for (var i = 0; i < resultData.information.length; i++) {
     html += '<tr>';
@@ -62,6 +62,7 @@ function crearTabla(resultData){
   }
   html += '</tbody></table>';
   html += inputsCatalogo();
+  html += '<div>'
   $("#contenedorCentral").html(html);
   $("#agregar").on("click", function(){
     guardarInformacion();
@@ -85,11 +86,27 @@ function getInformationByGroup(){
   });
 }
 
+function isValidJson(json){
+  if (/^[\],:{}\s]*$/.test(json.replace(/\\["\\\/bfnrtu]/g, '@').
+  replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
+  replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
+    return true;
+  }
+  return false;
+}
+
 function guardarInformacion(){
   var grupo = 99;
-  var informacion = "";
+  var informacion = {
+    "codigo": null,
+    "descripcion": null,
+    "precio": null
+  };
   var inputs = $(".Valores");
-  for (var i = 0; i < inputs.length; i++) {
+  informacion.codigo = inputs[0].value;
+  informacion.descripcion = inputs[1].value;
+  informacion.precio = inputs[2].value;
+  /*for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].value == "") {
       alert('debe llenar todos los campos');
       return;
@@ -97,19 +114,19 @@ function guardarInformacion(){
     informacion += '<td>';
     informacion += inputs[i].value;
     informacion += '</td>';
+  }*/
+  informacion.
+  if !(isValidJson(informacion)){
+    return alert("JSON invalido");
   }
   //la estructura que debemos enviar es especifica de cada servicio que usemos
   //en este caso un hay que enviar un objeto con el numero de grupo y con lo que queramos guardarInformacion
   //thing puede ser un objeto JSON con tanta información como queramos (en este servicio)
-  var info = {
-    group: grupo,
-    thing: informacion //puede ser un objeto JSON!
-  };
   $.ajax({
     method: "POST",
     dataType: 'JSON',
     //se debe serializar (stringify) la informacion (el "data:" de ida es de tipo string)
-    data: JSON.stringify(info),
+    data: JSON.stringify(informacion),
     contentType: "application/json; charset=utf-8",
     url: "http://web-unicen.herokuapp.com/api/create",
     success: function(resultData){
