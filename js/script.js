@@ -47,7 +47,7 @@ function inputsCatalogo(){
   string += '<input type="text" class="btn col-xs-6 col-sm-2 Valores"></input> ';
   string += '<span class="col-xs-6 col-sm-2">PRECIO: </span>';
   string += '<input type="text" class="btn col-xs-6 col-sm-2 Valores"></input> ';
-  string += '<input id="agregar" type="button" class="btn col-xs-12 col-sm-6" value="AGREGAR">'
+  string += '<input id="agregar" type="button" class="btn col-xs-12 col-sm-6 col-sm-offset-3" value="AGREGAR">'
   string += '<div class="col-xs-12" id="guardarAlert"></div>';
   return string;
 }
@@ -79,10 +79,10 @@ function crearTabla(resultData){
 
 function asignarEliminar(boton, numero, id){
   var rowAEliminar = numero+1;//el primer row es del header de la tabla
-  boton.on("click", function(){
+  boton.click = function(){
     deleteInformationByItem(id);
     getInformationByGroup();
-  })
+  }
 }
 
 function deleteInformationByItem(item) {
