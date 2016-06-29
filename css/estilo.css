@@ -142,9 +142,14 @@ input.Valores{
   list-style-type: none;
   text-decoration: none;
   color: #222;
+  margin: 0px;
 }
 
 .filtro input{
   width: 100%;
   background-color: #7887AB;
+}
+
+.produ{
+  padding: 40px;
 }
