@@ -12,6 +12,7 @@ $( document ).ready(function() {
 
   $("#catalogo").on("click", function(){
     cargarContenido("../html/catalogo.html", "#catalogo");
+    getInformationByGroup();
   });
 });
 
@@ -64,7 +65,7 @@ function crearTabla(resultData){
   $("#contenedorCentral").html(html);
   $("#agregar").on("click", function(){
     guardarInformacion();
-    /*getInformationByGroup();*/
+    getInformationByGroup();
   });
 }
 
