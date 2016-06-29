@@ -41,14 +41,14 @@ function getInformationByItem(item){
 
 function inputsCatalogo(){
   var string = "Agregar valores nuevos: <br />"
-  string += "CODIGO: ";
-  string += '<input type="text" class="btn Valores"></input> ';
-  string += "DESCRIPCION: ";
-  string += '<input type="text" class="btn Valores"></input> ';
-  string += "PRECIO: ";
-  string += '<input type="text" class="btn Valores"></input> ';
-  string += '<input id="agregar" type="button" class="btn" value="AGREGAR">'
-  string += '<div id="guardarAlert"></div>';
+  string += '<span class="col-xs-6 col-sm-3">CODIGO: </span>';
+  string += '<input type="text" class="btn col-xs-6 col-sm-3 Valores"></input> ';
+  string += '<span class="col-xs-6 col-sm-3">DESCRIPCION: </span>';
+  string += '<input type="text" class="btn col-xs-6 col-sm-3 Valores"></input> ';
+  string += '<span class="col-xs-6 col-sm-3">PRECIO: </span>';
+  string += '<input type="text" class="btn col-xs-6 col-sm-3 Valores"></input> ';
+  string += '<input id="agregar" type="button" class="btn col-xs-6 col-sm-3" value="AGREGAR">'
+  string += '<div class="col-xs-12" id="guardarAlert"></div>';
   return string;
 }
 
