@@ -94,7 +94,7 @@ function guardarInformacion(){
     precio: null
   };
   var inputs = $(".Valores");
-  informacion.codigo = +inputs[0].value+;
+  informacion.codigo = inputs[0].value;
   informacion.descripcion = inputs[1].value;
   informacion.precio = inputs[2].value;
   /*for (var i = 0; i < inputs.length; i++) {
