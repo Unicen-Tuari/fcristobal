@@ -134,16 +134,6 @@ input.Valores{
   margin-top: 20px;
 }
 
-.contenido{
-  border-style: dashed;
-  border-radius: 50px;
-  border-color: black;
-  margin-top: 50px;
-  overflow: hidden;
-  background-color: black;
-  opacity: 0.8;
-}
-.ultimo{
-  float: left;
-  width: 78%;
+.prodfiltrado{
+  display: none;
 }

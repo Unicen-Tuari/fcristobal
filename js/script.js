@@ -173,8 +173,18 @@ function guardarInformacion(){
 /*$("#catalogo").click(getInformationByItem('576ab2589568d10300a17cf7'));*/
 
 function mostrar(numero){
-  for (var i = 0; i < document.getElementsByClassName('prodfiltrado').length; i++){
-    document.getElementsByClassName('prodfiltrado')[i].style.display= 'none';
+  var listas = $(".prodfiltrado")
+  for (var i = 0; i < listas.length; i++){
+    listas[i].css("display", 'none');
   }
-  document.getElementsByClassName('prodfiltrado')[numero].style.display= 'inline-block';
+  listas[numero].css("display", 'block');
+}
+
+function cargarProductos() {
+  var botones = $(".filtro");
+  for (var i = 0; i < botones.length; i++) {
+    botones[i].onclick = function(){
+      mostrar(i);
+    }
+  }
 }
