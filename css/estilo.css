@@ -10,7 +10,7 @@ header{
 
 .nav-personalizado, footer {
   background-color: #2E4172;
-  color: white;
+  color: white !important;
   margin: 0px;
 }
 
