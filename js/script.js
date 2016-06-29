@@ -73,15 +73,13 @@ function crearTabla(resultData){
   });
   var botonesEliminar = $(".eliminar");
   for (var i = 0; i < botonesEliminar.length; i++) {
-    asignarEliminar(botonesEliminar[i], i, resultData.information[i]['_id']);
+    asignarEliminar(botonesEliminar[i], resultData.information[i]['_id']);
   }
 }
 
-function asignarEliminar(boton, numero, id){
-  var rowAEliminar = numero+1;//el primer row es del header de la tabla
+function asignarEliminar(boton, id){
   boton.click = function(){
     deleteInformationByItem(id);
-    getInformationByGroup();
   }
 }
 
@@ -91,7 +89,8 @@ function deleteInformationByItem(item) {
     url:"http://web-unicen.herokuapp.com/api/delete/" + id,
     method:"DELETE",
     success: function(resultData){
-      console.log(resultData);;
+      console.log(resultData);
+      getInformationByGroup();
     },
     error:function(jqxml, status, errorThrown){
       alert('Error!');
