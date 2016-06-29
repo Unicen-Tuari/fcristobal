@@ -86,15 +86,6 @@ function getInformationByGroup(){
   });
 }
 
-function isValidJson(json){
-  if (/^[\],:{}\s]*$/.test(json.replace(/\\["\\\/bfnrtu]/g, '@').
-  replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
-  replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
-    return true;
-  }
-  return false;
-}
-
 function guardarInformacion(){
   var grupo = 99;
   var informacion = {
@@ -115,9 +106,6 @@ function guardarInformacion(){
     informacion += inputs[i].value;
     informacion += '</td>';
   }*/
-  if (!(isValidJson(informacion))){
-    return alert("JSON invalido");
-  }
   //la estructura que debemos enviar es especifica de cada servicio que usemos
   //en este caso un hay que enviar un objeto con el numero de grupo y con lo que queramos guardarInformacion
   //thing puede ser un objeto JSON con tanta información como queramos (en este servicio)
