@@ -147,6 +147,8 @@ input.Valores{
 
 .filtro input{
   width: 100%;
+  border: 5px solid #4F618E;
+  border-radius: 0px;
   background-color: #7887AB;
 }
 
